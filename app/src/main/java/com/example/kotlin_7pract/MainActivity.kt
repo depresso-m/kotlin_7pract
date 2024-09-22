@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.kotlin_7pract.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,21 +21,31 @@ import java.io.InputStream
 
 class MainActivity : AppCompatActivity() {
 
+    private var _binding : ActivityMainBinding? = null
+    private val binding get() = _binding!!
+
     private lateinit var urlInput: EditText
     private lateinit var loadButton: Button
     private lateinit var imageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        urlInput = findViewById(R.id.urlInput)
-        loadButton = findViewById(R.id.loadButton)
-        imageView = findViewById(R.id.imageView)
+        urlInput = binding.urlInput
+        loadButton = binding.loadButton
+        imageView = binding.imageView
 
         loadButton.setOnClickListener {
-            val url = urlInput.text.toString()
-            loadAndSaveImage(url)
+            if (urlInput.text.toString() != "") {
+                val url = urlInput.text.toString()
+                loadAndSaveImage(url)
+            }
+            else
+            {
+                Toast.makeText(this, "Введите url", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

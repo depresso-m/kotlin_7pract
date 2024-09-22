@@ -1,6 +1,8 @@
 [versions]
 agp = "8.6.0"
-glide = "4.12.0"
+espressoaccessibility = "3.5.1"
+espressocoreVersion = "3.5.1"
+glide = "4.16.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -12,11 +14,21 @@ kotlinxCoroutinesAndroidVersion = "1.9.0"
 material = "1.12.0"
 activity = "1.9.2"
 constraintlayout = "2.1.4"
+mockitoCore = "5.13.0"
 okhttp = "4.12.0"
+robolectricVersion = "4.13"
 sdkcoroutines = "1.0.0"
+testng = "7.10.2"
+firebaseAppdistributionGradle = "5.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-espressocontrib = { module = "androidx.test.espresso:espressocontrib", version.ref = "espressocoreVersion" }
+androidx-espressocore = { module = "androidx.test.espresso:espressocore", version.ref = "espressocoreVersion" }
+androidx-espressointents = { module = "androidx.test.espresso:espressointents", version.ref = "espressocoreVersion" }
+androidx-espressoweb = { module = "androidx.test.espresso:espressoweb", version.ref = "espressoaccessibility" }
+androidx-idlingconcurrent = { module = "androidx.test.espresso.idling:idlingconcurrent", version.ref = "espressoaccessibility" }
+espressoaccessibility = { module = "androidx.test.espresso:espressoaccessibility", version.ref = "espressoaccessibility" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -27,8 +39,12 @@ kotlinx-coroutinesandroid = { module = "org.jetbrains.kotlinx:kotlinx-coroutines
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+robolectric-robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectricVersion" }
 sdkcoroutines = { group = "com.google.android.libraries.sdkcoroutines", name = "sdkcoroutines", version.ref = "sdkcoroutines" }
+testng = { group = "org.testng", name = "testng", version.ref = "testng" }
+firebase-appdistribution-gradle = { group = "com.google.firebase", name = "firebase-appdistribution-gradle", version.ref = "firebaseAppdistributionGradle" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
